@@ -17,11 +17,16 @@ class Program
         Console.WriteLine("Creating device...");
         var terminal = new PaymentTerminalAdyen(host: "<ip>", port: 8443, serialNumber: "<serialnumber>"); // TODO: fill
 
-        Console.WriteLine("Performing diagnosis...");
-        var testRes = terminal.TryTestAsync().Result;
+        while (true)
+        {
+            Console.WriteLine("Performing diagnosis...");
+            var testRes = terminal.TryTestAsync().Result;
 
-        Console.WriteLine("Test-Result: " + testRes);
+            Console.WriteLine("Test-Result: " + testRes);
 
+            Console.WriteLine("Waiting 5 seconds...");
+            Task.Delay(5000).Wait(); // Wait for 5 seconds before the next test
+        }
         return 0;
     }
 }
