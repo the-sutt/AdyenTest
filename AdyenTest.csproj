@@ -14,6 +14,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Adyen" Version="32.0.0" />
+        <PackageReference Include="Adyen" Version="32.1.0" />
     </ItemGroup>
 </Project>
